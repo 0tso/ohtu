@@ -1,0 +1,6 @@
+Retrospektiivit ovat lyhyehköjä tilaisuuksia, joissa projektia tekevät ryhmän jäsenet kokoontuvat keskustelemaan projektin tai iteraation lopussa siitä, mikä projektin tekemisessä on onnistunut ja mikä epäonnistunut; kuinka projektin tekemistä kuuluisi siis yleisesti muuttaa ja parannella. Retrospektiivit keskittyvätkin siis nimenomaan tiimin sisäiseen työskentelyyn, eivätkä niinkään valmistuneen tuotteen ominaisuuksiin.
+
+"Start, Stop, Continue, More of, Less of Wheel" -retrospektiivitekniikassa ryhmä piirtää ympyrän, joka jaetaan viiteen, tekniikan nimestä koostuvaan osaan. Nämä osat käydään yksitellen läpi, ja jokaiseen pyydetään ryhmältä avoimia ja vapaita kommentteja. Esimerkiksi "start"-osioon halutaan kommentteja asioista, joita ryhmän kuuluisi alkaa tekemään, "stop"-osioon asioista, joita ryhmän kuuluu lakata tekemästä, ja niin edelleen.
+
+"Glad, Sad, Mad" -tekniikassa tiimin jäsenet kirjoittavat pienille korteille kommentteja työskentelyn aikaisista asioista, ja nämä kommentit kasataan tekniikan nimen mukaisesti kolmeen eri kategoriaan: positiivisiin kommentteihin työskentelystä, negatiivisiin kommentteihin työskentelystä ja yleisiin harmistuksen kohteisiin. Tiimi äänestää tämän jälkeen siitä, mistä aiheista keskustella, kunnes aiheet on kaikki käyty läpi tai ennalta sovittu aika loppuu.
+

@@ -92,3 +92,29 @@ class TestKauppa(unittest.TestCase):
         self.kauppa.tilimaksu("Heikki Heikkinen", "12346")
 
         self.pankki_mock.tilisiirto.assert_called_with("Heikki Heikkinen", 123, "12346", ANY, 123)
+
+    def test_uusi_alku_nollaa_aiemman_ostoksen(self):
+        self.varasto_mock.saldo.return_value = 2
+        self.varasto_mock.hae_tuote.side_effect = lambda x: Tuote(1, "ac", 5) if x == 1 else Tuote(2, "oiacwm", 10)
+
+        self.kauppa.aloita_asiointi()
+        self.kauppa.lisaa_koriin(2)
+        self.kauppa.tilimaksu("Matti Mattinen", "12346")
+        self.pankki_mock.tilisiirto.assert_called_with("Matti Mattinen", 123, "12346", ANY, 10)
+
+        self.viite_mock.uusi.return_value = 612
+
+        self.kauppa.aloita_asiointi()
+        self.kauppa.lisaa_koriin(1)
+        self.kauppa.tilimaksu("Jukka Jukkanen", "6123")
+        self.pankki_mock.tilisiirto.assert_called_with("Jukka Jukkanen", 612, "6123", ANY, 5)
+    
+    def test_poista_tuote(self):
+        self.varasto_mock.saldo.return_value = 2
+        self.varasto_mock.hae_tuote.side_effect = lambda x: Tuote(1, "ac", 5) if x == 1 else Tuote(2, "oiacwm", 10)
+        self.kauppa.aloita_asiointi()
+        self.kauppa.lisaa_koriin(2)
+        self.kauppa.lisaa_koriin(1)
+        self.kauppa.poista_korista(2)
+        self.kauppa.tilimaksu("Matti Mattinen", "12346")
+        self.pankki_mock.tilisiirto.assert_called_with("Matti Mattinen", 123, "12346", ANY, 5)
